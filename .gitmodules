@@ -1,0 +1,6 @@
+[submodule "vl6180_driver"]
+	path = vl6180_driver
+	url = git@github.com:lwehmeier/vl6180_python
+[submodule "tca9548_driver"]
+	path = tca9548_driver
+	url = git@github.com:lwehmeier/tca9548_python
