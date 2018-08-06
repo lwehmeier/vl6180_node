@@ -10,7 +10,7 @@ from vl6180_driver.ST_VL6180X import VL6180X
 import numpy as np
 import time
 VL_CHANNELS = {"lf" : 0x03, "lr" : 0x02, "rf": 0x04, "rr": 0x05, "fl": 0x06, "fr": 0x07}
-DISTANCE_THRESHOLD =  250
+DISTANCE_THRESHOLD =  200
 
 class VL6180:
     def __init__(self, angle):
@@ -20,6 +20,8 @@ class VL6180:
         tca.chn(VL_CHANNELS[angle])
         time.sleep(0.1)
         self.vl = VL6180X()
+        self.vl.stop()
+        time.sleep(0.01)
         self.vl.set_scale(1)
         self.vl.start()
         #self.vl.get_identification()
